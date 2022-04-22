@@ -48,17 +48,22 @@
             display: none;
         }
 
-        #perfil{
-            position: relative;
-            border: none;
-            top: auto;
-            width: 380px;
-            height: 380px;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 20px;
-        }
+       
         @media (min-width: 600px){
+            #mytext{
+                width: 40%;
+            }
+            #perfil{
+                float: right;
+                width: 360px;
+                height: 360px;
+                margin: 0 auto;
+                border: none;
+                padding: 1rem ;
+            
+            
+            
+        }
             #rodape{
                 position: absolute;
                 background-color: rgb(115, 131, 131);
@@ -71,16 +76,29 @@
         }
 
         @media (max-width: 600px){
+            h1{
+                text-align: center;
+            }
+
             #rodape{
-                position:absolute;
+                display: block;
+                position: fixed;
                 background-color: rgb(115, 131, 131);
+                text-align: center;
                 bottom: 0;
                 height: 60px;
                 width: 100%;
-                text-align: center;
+                
         
             }
-            
+            #perfil{
+                display: none;
+            }
+            #mytext{
+                text-align: center;
+                left: 10%;
+                right: 10%;
+            }
             #menubt{
                 display: flex;
                 padding: .5rem 1rem;
@@ -148,6 +166,12 @@
         font-style: italic;
         
     }
+    #rodape p {
+        text-align: center;
+        font-size: 8pt;
+
+    }
+     
     </style>
 </head>
 <body>
@@ -166,9 +190,15 @@
     </header>
 
     <h1>Emanuel Silva de Figueiredo</h1>
-    <img id="perfil" src="imgs/myperfil.jpg" style="width: 40%; height: 40%;" >
+    <img id="perfil" src="imgs/myperfil.jpg" >
+    <div id="mytext">
+    <p>Olá, sou um estudante de engenharia da computação, atualmente estou n 5º período. Criei este site para pode publicar minhas ideias de projetos e assim conseguir apoio para realiza-las e quem sabe um emprego na área. Logo mais estarei publicando novos projetos.</p>
+    <p>Sou capaz de escrever scripts simples em linguagem C e Python, mas também estou me dedicando a aprender Kotlin visando programação Android. Vale lembrar que estou dominando HTML5, CSS3 e JavaScript, com esses conhecimentos que criei este site e pretendo implementar mais funcionalidade e interações ao decorrer do tempo.</p>
+    <p>Minha primeira ideia e criar um cardápio em áudio para diminuir o desconforto que uma pessoa com deficiência visual enfrenta na hora de escolher uma refeição dentro de um restaurante.</p>    
+</div>
     <footer id="rodape">
         <H1>Feito por Emanuel para mostrar um pouco de suas habilidade.</H1>
+        <p>Copyright (c) 2022 EMANUEL SILVA DE FIGUEIREDO</p>
     </footer>
     <script>
         const menubt = document.getElementById('menubt')
