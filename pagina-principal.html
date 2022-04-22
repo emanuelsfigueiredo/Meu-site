@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site do Emanuel</title>
+    <style>
+        #imgs{
+                list-style: none;
+                display: flex;
+                text-align: center;
+                transition: 3s;
+                cursor: pointer;
+                padding: 1px;
+
+            }
+        
+        
+       
+       
+        
+
+        body { 
+            margin: 0px;
+            padding: 0px;
+            font: 12pt Arial italic; 
+            background-color: rgb(202, 195, 195);
+            
+        }
+        
+        h1{
+            font-size: 18pt;
+            
+            font:x-large;
+            padding: 0% 8%;
+            left: 20px;
+            right: 20px;
+            position: calc();
+        }
+
+        a{
+            color: bisque;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+        a:hover{
+            background: rgba(0, 0, 0, 0);
+        }
+        #nome{
+            font-size: 1.5rem;
+            font-weight: bold;
+           
+        }
+        #header{
+            box-sizing: border-box;
+            height: 70px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            background-color: rgb(115, 131, 131);
+            justify-content: space-between;
+        }
+        #menu{
+            display: flex;
+            list-style: none;
+            gap: .5rem;
+            
+        }
+        #menu a{
+            display: block;
+            padding: .5rem;
+        }
+        #menubt{
+            display: none;
+        }
+
+        #perfil{
+            position: relative;
+            border: none;
+            top: auto;
+            width: 380px;
+            height: 380px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+
+        
+        @media (min-width: 600px){
+            h1{
+                text-align: center;
+            }
+            #imgs{
+                list-style: none;
+                display: flex;
+                text-align: center;
+                transition: 3s;
+            }
+            #imgs li{
+                margin: 0 auto;
+            }
+            #rodape{
+                position: absolute;
+                background-color: rgb(115, 131, 131);
+                bottom: 0;
+                width: 100%;
+        
+        }   
+                   
+        }
+
+        @media (max-width: 600px){
+            #rodape{
+                position:inherit;
+                background-color: rgb(115, 131, 131);
+                bottom: 0;
+                height: 60px;
+                width: 100%;
+        
+            }
+            h1{
+                text-align: center;
+            }
+            #imgs{
+            list-style: none;
+            display:block;
+            text-align: center;
+            transition: 3s;
+            
+        }
+           
+            #menubt{
+                display: flex;
+                padding: .5rem 1rem;
+                border: none;
+                background: none;
+                cursor: pointer;
+                gap: .5rem;
+
+            }
+            #menu{
+                display: block;
+                position: absolute;
+                width: 100%;
+                top: 70px;
+                right: 0px;
+                background-color: rgb(115, 131, 131);
+                height: 0px;
+                transition: .9s;
+                z-index: 1000;
+                visibility: hidden;
+                overflow-y: hidden;
+               
+                
+            }
+            #nav.active #menu{
+                height: calc( 100vh - 70px);
+                display: block;
+                visibility: visible;
+            }
+            #menu a{
+                padding: 1rem 0;
+                margin: 0 1rem;
+                border-bottom: 2px solid rgb(24, 24, 24);
+            }
+            #hb{
+                width: 20px;
+                border-top: 2px solid;
+
+            }
+            #hb::after, #hb::before {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 2px;
+                background-color: currentColor;
+                margin-top: 5px;
+                transition: .6s;
+                position: relative;
+            }
+            #nav.active #hb{
+                border-top-color: transparent;
+
+            }
+            #nav.active #hb::before{
+                transform: rotate(135deg);
+            }
+            #nav.active #hb::after{
+                transform: rotate(-135deg);
+                top: -7px;
+            }
+        }
+   
+
+    #rodape h1{
+        font-size: 10pt;
+        font-style: italic;
+        
+    }
+       
+    </style>
+</head>
+<body>
+    
+    
+    <header id="header">
+        <a id="nome" href="">Emanuel</a>
+        <nav id="nav" >
+            <button id="menubt">Menu
+                <span id="hb"></span>
+            </button>
+            <ul id="menu">
+                <li><a href="pagina-principal.html">Página Principal</a></li>
+                <li><a href="sobre-mim.html">Sobre mim</a></li>
+                <li><a href="meu-curriculo.html">Meu curriculo</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1>Essas são minhas redes sociais ! </h1>
+    
+        <div id="navimgs">
+            <ul id="imgs">
+                <li><a href="https://web.facebook.com/emanuel.defigueiredo.56/"><img src="imgs/fb-icon.png" width="190px" height="190px"></a></li>
+                <li><a href="https://www.instagram.com/emanuel_silvaf/?hl=pt-br"><img src="imgs/ig-icon.png" width="160px" height="160px"></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=5592988398799&text=Ol%C3%A1%20Emanuel%20!"><img src="imgs/wpp-icon.png" width="185px" height="190px"></a></li>
+                <li><a href="https://github.com/emanuelsfigueiredo"><img src="imgs/gh-icon.png" width="160px" height="160px" ></a></li>
+            </ul>
+        </div>
+        <footer id="rodape">
+            <H1>Feito por Emanuel para mostrar um pouco de suas habilidade.</H1>
+        </footer>
+    <script>
+     
+    
+
+        const menubt = document.getElementById('menubt')
+        function togglemenu(event){
+            if (event.type === 'touchstart') event.preventDefault();
+            const nav = document.getElementById('nav')
+            nav.classList.toggle('active')
+        }
+        menubt.addEventListener('click', togglemenu)
+        menubt.addEventListener('touchstart', togglemenu)
+         
+    </script>
+</body>
+</html>

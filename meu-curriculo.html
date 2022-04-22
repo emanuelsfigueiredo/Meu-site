@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body { 
+            margin: 0px;
+            padding: 0px;
+            font: 12pt Arial italic; 
+            background-color: rgb(202, 195, 195);
+            
+        }
+        a{
+            color: bisque;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+        a:hover{
+            background: rgba(0, 0, 0, 0);
+        }
+        #nome{
+            font-size: 1.5rem;
+            font-weight: bold;
+           
+        }
+        #header{
+            box-sizing: border-box;
+            height: 70px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            background-color: rgb(115, 131, 131);
+            justify-content: space-between;
+        }
+        #menu{
+            display: flex;
+            list-style: none;
+            gap: .5rem;
+        }
+        #menu a{
+            display: block;
+            padding: .5rem;
+        }
+        #menubt{
+            display: none;
+        }
+
+        #perfil{
+            position: relative;
+            border: none;
+            top: auto;
+            width: 380px;
+            height: 380px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+        @media (min-width: 600px){
+            #rodape{
+                position: absolute;
+                background-color: rgb(115, 131, 131);
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+        
+        }   
+            
+        }
+
+        @media (max-width: 600px){
+            #rodape{
+                position:absolute;
+                background-color: rgb(115, 131, 131);
+                bottom: 0;
+                height: 60px;
+                width: 100%;
+                text-align: center;
+        
+            }
+            #menubt{
+                display: flex;
+                padding: .5rem 1rem;
+                border: none;
+                background: none;
+                cursor: pointer;
+                gap: .5rem;
+
+            }
+            #menu{
+                /*display: none;*/
+                display: block;
+                position: absolute;
+                width: 100%;
+                top: 70px;
+                right: 0px;
+                background-color: rgb(115, 131, 131) ;
+                height: 0px;
+                transition: .9s;
+                z-index: 1000;
+                visibility: hidden;
+                overflow-y: hidden;
+               
+                
+            }
+            #nav.active #menu{
+                height: calc( 100vh - 70px);
+                display: block;
+                visibility: visible;
+            }
+            #menu a{
+                padding: 1rem 0;
+                margin: 0 1rem;
+                border-bottom: 2px solid rgb(24, 24, 24);
+            }
+            #hb{
+                width: 20px;
+                border-top: 2px solid;
+
+            }
+            #hb::after, #hb::before {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 2px;
+                background-color: currentColor;
+                margin-top: 5px;
+                transition: .6s;
+                position: relative;
+            }
+            #nav.active #hb{
+                border-top-color: transparent;
+
+            }
+            #nav.active #hb::before{
+                transform: rotate(135deg);
+            }
+            #nav.active #hb::after{
+                transform: rotate(-135deg);
+                top: -7px;
+            }
+        }
+        #rodape h1{
+        font-size: 10pt;
+        font-style: italic;
+        
+    }
+</style>
+<body>
+    <header id="header">
+    <a id="nome" href="">Emanuel</a>
+    <nav id="nav" >
+        <button id="menubt">Menu
+            <span id="hb"></span>
+        </button>
+        <ul id="menu">
+            <li><a href="pagina-principal.html">Página Principal</a></li>
+            <li><a href="sobre-mim.html">Sobre mim</a></li>
+            <li><a href="meu-curriculo.html">Meu curriculo</a></li>
+        </ul>
+    </nav>
+
+       
+</header>
+
+<footer id="rodape">
+    <H1>Feito por Emanuel para mostrar um pouco de suas habilidade.</H1>
+</footer>
+    <script>
+        const menubt = document.getElementById('menubt')
+        
+        function togglemenu(event){
+            if (event.type === 'touchstart') event.preventDefault();
+            const nav = document.getElementById('nav')
+            nav.classList.toggle('active')
+        }
+        menubt.addEventListener('click', togglemenu)
+        menubt.addEventListener('touchstart', togglemenu)
+    </script>
+</body>
+</html>
