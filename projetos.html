@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site do Emanuel</title>
+    <title>Projetos</title>
     <style>
-          body { 
+             body { 
             margin: 0px;
             padding: 0px;
             font: 12pt Arial italic; 
@@ -48,56 +48,74 @@
             display: none;
         }
 
-       
-        @media (min-width: 600px){
-            #mytext{
-                width: 40%;
-            }
-            #perfil{
-                float: right;
-                width: 360px;
-                height: 360px;
-                margin: 0 auto;
-                border: none;
-                padding: 1rem ;
-            
-            
-            
+        #perfil{
+            position: relative;
+            border: none;
+            top: auto;
+            width: 380px;
+            height: 380px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
         }
+        @media (min-width: 600px){
             #rodape{
                 position: absolute;
                 background-color: rgb(115, 131, 131);
                 bottom: 0;
                 width: 100%;
                 text-align: center;
+
         
         }   
+
+        p{
+        text-align: left ;
+        margin-right: 40%;
+        margin-left: 15px;
+        }
+
+        #p1{
+                text-align: left;
+                margin-right: 35%;
+            }
+            #rfid{
+                max-width: 15%;
+                margin-right: 5%;
+                float: right;
+            }
+            #btrfid{
+                margin-left: 1%;
+            }
+            h1{
+                margin-left: 1%;
+            }
             
         }
 
         @media (max-width: 600px){
-            h1{
-                text-align: center;
-            }
-
             #rodape{
-                display: block;
-                position: fixed;
+                position:absolute;
                 background-color: rgb(115, 131, 131);
-                text-align: center;
                 bottom: 0;
                 height: 60px;
                 width: 100%;
-                
+                text-align: center;
         
             }
-            #perfil{
-                display: none;
+            #p1{
+                /*text-align: left;*/
+                margin-left: 2%;
+                margin-right: 35%;
             }
-            #mytext{
-                text-align: center;
-                left: 10%;
-                right: 10%;
+            #btrfid{
+                font-style: italic;
+                font-size: 14pt;
+                margin-left: 2%;
+            }
+            #rfid{
+                max-width: 35%;
+                float: right;
             }
             #menubt{
                 display: flex;
@@ -160,6 +178,11 @@
                 transform: rotate(-135deg);
                 top: -7px;
             }
+            h1{
+                 text-align: center;
+                 margin-left: 1%;
+             }
+    
         }
         #rodape h1{
         font-size: 10pt;
@@ -171,6 +194,7 @@
         font-size: 8pt;
 
     }
+    
      
     </style>
 </head>
@@ -189,21 +213,13 @@
             </ul>
         </nav>
     </header>
-
-    <h1>Emanuel Silva de Figueiredo</h1>
-    <img id="perfil" src="imgs/myperfil.jpg" >
-    <div id="mytext">
-    <p>Olá, sou um estudante de engenharia da computação, atualmente estou n 5º período. Criei este site para pode publicar minhas ideias de projetos e assim conseguir apoio para realiza-las e quem sabe um emprego na área. Logo mais estarei publicando novos projetos.</p>
-    <p>Sou capaz de escrever scripts simples em linguagem C e Python, mas também estou me dedicando a aprender Kotlin visando programação Android. Vale lembrar que estou dominando HTML5, CSS3 e JavaScript, com esses conhecimentos que criei este site e pretendo implementar mais funcionalidade e interações ao decorrer do tempo.</p>
-    <p>Minha primeira ideia e criar um cardápio em áudio para diminuir o desconforto que uma pessoa com deficiência visual enfrenta na hora de escolher uma refeição dentro de um restaurante.</p>    
-</div>
-    <footer id="rodape">
-        <H1>Feito por Emanuel para mostrar um pouco de suas habilidade.</H1>
-        <p>Copyright (c) 2022 EMANUEL SILVA DE FIGUEIREDO</p>
-    </footer>
+    <h1>Projeto de carrinho com RFID.</h1>
+    <img id="rfid" src="imgs/rfid.jpg" alt="">
+    <p id="p1">Esse projeto consiste simplesmente na criação de um carrinho de super mercado automatizado, onde o primeiro passo é criar um dispositivo que a partir do momento que o usuário insere uma mercadoria no carrinho é acrescentado o valor do mesmo, tendo assim no display o valor exato de quanto o usuário vai precisar pagar na hora de chegar no caixa.</p>
+    <button id="btrfid" onclick="proximo()">Ir para o projeto</button>
+  
     <script>
-        const menubt = document.getElementById('menubt')
-        
+           const menubt = document.getElementById('menubt')
         function togglemenu(event){
             if (event.type === 'touchstart') event.preventDefault();
             const nav = document.getElementById('nav')
@@ -211,6 +227,16 @@
         }
         menubt.addEventListener('click', togglemenu)
         menubt.addEventListener('touchstart', togglemenu)
+        
+        function proximo(){
+            window.location.href="rfid.html"
+        }
+
+/*  <footer id="rodape">
+        <H1>Feito por Emanuel para mostrar um pouco de suas habilidade.</H1>
+        <p >Copyright (c) 2022 EMANUEL SILVA DE FIGUEIREDO</p>
+    </footer>
+    */
     </script>
 </body>
 </html>
